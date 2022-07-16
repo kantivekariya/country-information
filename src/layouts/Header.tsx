@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = () => {
   return (
@@ -7,7 +8,7 @@ const Header = () => {
           <h4>Where is the world?</h4>
         </div>
         <div className="">
-          Dark Mode
+        <FontAwesomeIcon icon={["fal", "coffee"]} />Dark Mode
         </div>
       </div>
     </nav>

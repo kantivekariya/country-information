@@ -23,10 +23,12 @@ const countryInfoSlice = createSlice({
     },
     countyInfoSuccess(state, action: PayloadAction<any[]>) {
       state.isLoading = false;
+      state.status = "Success";
       state.countryList = action.payload;
     },
     countyInfoFailure(state, action: PayloadAction<string>) {
       state.isLoading = false;
+      state.status = "Failde";
       state.error = action.payload;
     },
   },

@@ -1,9 +1,10 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 
 const CountryDetailsInfo = () => {
+  const { countryCode } = useParams();
   return (
     <>
-      <h1>Home 2</h1>
+      <h1>{countryCode}</h1>
     </>
   );
 };

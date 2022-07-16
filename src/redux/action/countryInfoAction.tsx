@@ -10,7 +10,7 @@ export const fetchCountryInfoList = () => async (dispatch: any) => {
   dispatch(countyInfoLoading());
   try {
     const res = await axios.get<AxiosResponse<any, any>, any>(`${config.BASE_URL}/all`);
-    dispatch(countyInfoSuccess(res));
+    dispatch(countyInfoSuccess(res.data));
   } catch (error) {
     dispatch(countyInfoFailure(error as string));
     return Promise.reject(error);
