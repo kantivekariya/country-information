@@ -15,9 +15,11 @@ import storage from "redux-persist/lib/storage";
 import _ from "lodash";
 
 import countryInfoSlice from "../features/countryInfoSlice";
+import countryInfoDetailsSlice from "../features/countryInfoDetailsSlice";
 
 const rootReducer = combineReducers({
   countryInfo: countryInfoSlice,
+  countryInfoDetails: countryInfoDetailsSlice,
 });
 
 const persistConfig = {
