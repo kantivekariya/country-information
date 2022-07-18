@@ -1,4 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { faMoon } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   return (
@@ -8,7 +10,7 @@ const Header = () => {
           <h4>Where is the world?</h4>
         </div>
         <div className="">
-        <FontAwesomeIcon icon={["fal", "coffee"]} />Dark Mode
+          <FontAwesomeIcon icon={faMoon as IconProp} /> Dark Mode
         </div>
       </div>
     </nav>

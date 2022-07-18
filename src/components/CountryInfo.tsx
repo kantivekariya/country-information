@@ -1,3 +1,6 @@
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { map } from "lodash";
 import { Dispatch, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,28 +16,20 @@ const CountryInfo = () => {
   }, [dispatch]);
   return (
     <>
-      <div className="row">
+      <div className="row mt-5">
         <div className="col-md-8">
-          <div className="input-group col-md-4">
+          <div className="form-group has-search">
+            <span className="fa fa-search form-control-feedback pt-1"></span>
             <input
-              className="form-control py-2 border-right-0 border"
-              type="search"
-              value="search"
-              id="example-search-input"
+              type="text"
+              className="form-control"
+              placeholder="Search for country..."
             />
-            <span className="input-group-append">
-              <button
-                className="btn btn-outline-secondary border-left-0 border"
-                type="button"
-              >
-                <i className="fa fa-search"></i>
-              </button>
-            </span>
           </div>
         </div>
         <div className="col-md-4 text-end">
           <select
-            className="form-select form-select-lg mb-3"
+            className="form-select w-50 form-select-lg mb-3"
             aria-label=".form-select-lg example"
           >
             <option selected>Filter By Region</option>
@@ -48,7 +43,7 @@ const CountryInfo = () => {
         {map(countryList, (item) => (
           <div
             className="col-md-3 p-3"
-            onClick={() => navigate(`/country-info/${item.cca2}`)}
+            onClick={() => navigate(`/${item.cca2}`)}
             key={item.fifa}
           >
             <div className="card" style={{ width: "auto" }}>

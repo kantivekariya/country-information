@@ -7,9 +7,10 @@ const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Navigate to="country-info" />} />
-        <Route path="country-info" element={<CountryInfo />} />
-        <Route path="country-info/:countryCode" element={<CountryDetailsInfo />} />
+        <Route path="/">
+          <Route path="/" element={<CountryInfo />} />
+          <Route path=":countryCode" element={<CountryDetailsInfo />} />
+        </Route>
       </Route>
     </Routes>
   );

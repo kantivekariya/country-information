@@ -2,7 +2,6 @@ import { batchedSubscribe } from "redux-batched-subscribe";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import {
-  persistStore,
   persistReducer,
   FLUSH,
   REHYDRATE,
