@@ -1,4 +1,4 @@
-import { createSlice, createSelector, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface CountryInfo {
   countryList: Array<any>;
