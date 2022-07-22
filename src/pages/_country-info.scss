@@ -1,0 +1,21 @@
+@import "../common-style";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.controllers {
+  width: $width;
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 0;
+}
+
+@media screen and (max-width: $width-mobile) {
+  .controllers {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,148 @@
+@import "../common-style";
+
+.detail {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &-back-btn {
+    margin: 5rem 0;
+    width: $width;
+    cursor: pointer;
+  }
+
+  &-link-btn {
+    background: #fff;
+    padding: 0.5rem 1.2rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    border: none;
+    border-radius: $border-radius;
+    transition: all 0.3s;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.42);
+    &:hover {
+      box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.42);
+      transform: scale(1.03);
+    }
+    .icon {
+      margin-right: 0.8rem;
+      font-size: 1rem;
+    }
+  }
+
+  &-stats {
+    width: $width;
+    display: flex;
+    justify-content: space-between;
+
+    .light-text {
+      color: black;
+      transition: all 0.3s;
+    }
+
+    .dark-text {
+      color: $light-mode-elements;
+      transition: all 0.3s;
+    }
+  }
+
+  &-flag {
+    width: 25rem;
+    height: 22rem;
+    object-fit: cover;
+  }
+
+  &-text-container {
+    width: 47vw;
+    .heading {
+      margin: 2.5rem 0;
+    }
+    .border {
+      margin-top: 3.5rem;
+      display: flex;
+      &-text {
+        font-weight: 600;
+        margin-top: 0.4rem;
+      }
+      &-btn {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  &-text {
+    display: flex;
+    justify-content: space-between;
+    .text {
+      line-height: 1.5rem;
+      font-weight: 600;
+      span {
+        margin-left: 3px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $width-mobile) {
+  .link-btn {
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: $width-mobile) {
+  .detail {
+    &-text-container {
+      margin-top: 2.5rem;
+    }
+    &-stats,
+    &-text {
+      width: $width;
+      flex-direction: column;
+    }
+
+    &-flag {
+      width: 100%;
+    }
+
+    &-text {
+      .right {
+        margin-top: 2rem;
+      }
+      .left {
+        margin-top: -1rem;
+      }
+    }
+  }
+  .text {
+    margin-top: 0.8rem;
+  }
+
+  .border {
+    width: $width;
+    flex-direction: column;
+
+    &-btn {
+      margin: 2rem 0 !important;
+      display: flex;
+    }
+  }
+}
+
+@media screen and (max-width: $width-laptop) {
+  .heading {
+    margin-top: 0 !important;
+  }
+  .border {
+    width: $width;
+    flex-direction: column;
+
+    &-btn {
+      margin: 2rem 0 !important;
+      display: flex;
+    }
+  }
+}

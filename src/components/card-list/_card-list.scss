@@ -1,0 +1,17 @@
+@import "../../common-style";
+
+.cardList {
+  &-container {
+    width: $width;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 15em));
+    justify-content: space-between;
+    grid-gap: 4.6rem;
+  }
+}
+
+@media screen and (max-width: $width-mobile) {
+  .cardList-container {
+    justify-content: center;
+  }
+}
