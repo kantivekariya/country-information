@@ -26,7 +26,8 @@ Users should be able to:
 
 ### Screenshot
 
-![Countries](./idea/countries.jpg)
+![country](https://user-images.githubusercontent.com/29365336/180505821-0e16c929-2236-4099-a709-98ed0ec44d09.png)
+
 
 ### Links
 
