@@ -23,7 +23,7 @@ const CountryDetailsInfo = ({ theme }: IProps) => {
     <>
       {isLoading ? (
         <>
-          <Loading />
+          <Loading theme={theme} />
         </>
       ) : (
         <div className="detail-container">
@@ -47,9 +47,10 @@ const CountryDetailsInfo = ({ theme }: IProps) => {
                   <p className="text">
                     Native Name:{" "}
                     <span>
-                      {Object.values(countryDetailsInfo?.name?.nativeName)?.map(
-                        (cur: any) => cur.common
-                      ).join(', ')}
+                      {countryDetailsInfo?.name?.nativeName &&
+                        Object.values(countryDetailsInfo?.name?.nativeName)
+                          ?.map((cur: any) => cur?.common)
+                          ?.join(", ")}
                     </span>
                   </p>
                   <p className="text">
@@ -80,15 +81,17 @@ const CountryDetailsInfo = ({ theme }: IProps) => {
                   <p className="text">
                     Currencies:{" "}
                     <span>
-                      {Object.values(countryDetailsInfo?.currencies)?.map(
-                        (cur: any) => cur.name
-                      )}
+                      {countryDetailsInfo?.currencies &&
+                        Object.values(countryDetailsInfo?.currencies)?.map(
+                          (cur: any) => cur?.name
+                        )}
                     </span>
                   </p>
                   <p className="text">
                     Languages:
                     <span>
-                      {Object.values(countryDetailsInfo?.languages).join(", ")}
+                      {countryDetailsInfo?.languages &&
+                        Object.values(countryDetailsInfo?.languages).join(", ")}
                     </span>
                   </p>
                 </div>

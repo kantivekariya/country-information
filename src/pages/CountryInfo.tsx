@@ -1,6 +1,6 @@
-import { Dispatch, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Outlet, useLocation, useMatch, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import CardList from "../components/card-list/CardList";
 import DropdownComponent from "../components/dropdown/dropdown";
 import Loading from "../components/Loading/Loading";
@@ -51,21 +51,21 @@ const CountryInfo = ({ theme }: IProps) => {
       return countryList?.filter((country: { region: string }) =>
         country?.region?.toLowerCase()?.includes(region?.toLowerCase())
       );
+    else return countryList;
   }, [countryList, region]);
 
-  console.log(filteredRegion());
-
-  //   const filterCountries = filteredRegion()?.filter((country: { name: string; }) =>
-  //   country.name.toLowerCase().includes(searchField.toLowerCase())
-  // );
-
-  // console.log(filterCountries);
+  const filterCountries = filteredRegion()?.filter(
+    (country: { name: { official: string } }) =>
+      country.name?.official
+        ?.toLowerCase()
+        ?.includes(searchField?.toLowerCase())
+  );
 
   return (
     <>
       <>
         {isLoading ? (
-          <Loading />
+          <Loading theme={theme} />
         ) : (
           <div className="container">
             <div className="controllers">
@@ -76,12 +76,12 @@ const CountryInfo = ({ theme }: IProps) => {
               />
               <DropdownComponent
                 regions={regions}
-                title="Filter by region"
+                title={region !== "all" ? region : "Filter by region"}
                 handleChange={handleRegion}
                 theme={theme}
               />
             </div>
-            <CardList countries={countryList} theme={theme} />
+            <CardList countries={filterCountries} theme={theme} />
           </div>
         )}
       </>

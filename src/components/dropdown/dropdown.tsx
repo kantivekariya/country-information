@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import "./dropdown.style.scss";
 
@@ -15,21 +15,23 @@ interface IPropsMenuItems {
   handleChange: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const DropDownItem = ({ title, handleChange, theme }: IPropsMenuItems) => {
-  return (
-    <button
-      className={`dropdown-item ${theme}`}
-      value={`${title}`}
-      onClick={handleChange}
-    >
-      {title}
-    </button>
-  );
-};
-
 const Dropdown = ({ theme, title, regions, handleChange }: IProps) => {
   const [showMenu, setShowMenu] = useState(false);
   const [initial, setInitial] = useState(true);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, false);
+    return () => {
+      document.removeEventListener("click", handleClickOutside, false);
+    };
+  }, []);
+
+  const handleClickOutside = (event: { target: any }) => {
+    if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+      setShowMenu(false);
+    }
+  };
 
   function toggle(e: { preventDefault: () => void }) {
     e.preventDefault();
@@ -37,8 +39,23 @@ const Dropdown = ({ theme, title, regions, handleChange }: IProps) => {
     setShowMenu((prevShowMenu) => (prevShowMenu ? false : true));
   }
 
+  const DropDownItem = ({ title, handleChange, theme }: IPropsMenuItems) => {
+    return (
+      <button
+        className={`dropdown-item ${theme}`}
+        value={`${title}`}
+        onClick={(event) => {
+          handleChange(event);
+          setShowMenu(false);
+        }}
+      >
+        {title}
+      </button>
+    );
+  };
+
   return (
-    <div className="dropdown-container">
+    <div className="dropdown-container" ref={wrapperRef}>
       <button onClick={toggle} className={`dropdown-btn ${theme}`}>
         <span>{title}</span>
         <i className="fas fa-chevron-down"></i>
@@ -47,6 +64,7 @@ const Dropdown = ({ theme, title, regions, handleChange }: IProps) => {
         className={`dropdown-menu
 				${initial ? "initial" : null}
 				${showMenu ? "show" : "hide"}
+        
 			`}
       >
         {regions.map((region: string) => (

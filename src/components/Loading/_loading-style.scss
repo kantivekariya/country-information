@@ -1,0 +1,53 @@
+@import "../../common-style";
+
+:root {
+  // Custom properties goes here
+  --accent: rgb(234, 235, 241);
+  --size: 2.5rem;
+  --duration: 1s;
+}
+
+.spinner {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: var(--size);
+  aspect-ratio: 1;
+  display: grid;
+  mask: conic-gradient(from 22deg, #0001, #000);
+  animation: spin var(--duration) steps(8) infinite;
+
+  &:before {
+    content: "";
+    transform: rotate(45deg);
+  }
+}
+
+.light-loader {
+  &,
+  &:before {
+    --gradient: linear-gradient(black 0 0);
+    background: var(--gradient) 50%/34% 8% space no-repeat,
+      var(--gradient) 50%/8% 34% no-repeat space;
+  }
+  
+}
+
+.dark-loader {
+  &,
+  &:before {
+    --gradient: linear-gradient(#fff 0 0);
+    background: var(--gradient) 50%/34% 8% space no-repeat,
+      var(--gradient) 50%/8% 34% no-repeat space;
+  }
+ 
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
