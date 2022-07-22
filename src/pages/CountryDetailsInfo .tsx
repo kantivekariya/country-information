@@ -33,14 +33,6 @@ const CountryDetailsInfo = ({ theme }: IProps) => {
                 <i className="fas fa-long-arrow-alt-left icon"></i> Back
               </button>
             </Link>
-
-            {/* <LinkButton
-          value={`/Rest-Countries-API/${visited[visited.length - 1]}`}
-          handleClick={this.handleBackBtn}
-          theme={theme}
-        >
-          <i className="fas fa-long-arrow-alt-left icon"></i> Back
-        </LinkButton> */}
           </div>
           <div className="detail-stats">
             <img
@@ -54,7 +46,11 @@ const CountryDetailsInfo = ({ theme }: IProps) => {
                 <div className="left">
                   <p className="text">
                     Native Name:{" "}
-                    <span>{countryDetailsInfo?.name?.official}</span>
+                    <span>
+                      {Object.values(countryDetailsInfo?.name?.nativeName)?.map(
+                        (cur: any) => cur.common
+                      ).join(', ')}
+                    </span>
                   </p>
                   <p className="text">
                     Population:
@@ -76,7 +72,9 @@ const CountryDetailsInfo = ({ theme }: IProps) => {
                   <p className="text">
                     Top Level Domain:{" "}
                     <span>
-                      {countryDetailsInfo?.tld?.map((domain: string) => domain)}
+                      {countryDetailsInfo?.tld
+                        ?.map((domain: string) => domain)
+                        .join(", ")}
                     </span>
                   </p>
                   <p className="text">

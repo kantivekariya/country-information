@@ -2,7 +2,7 @@
 
 .card {
   &-container {
-    width: 15rem;
+    width: 17rem;
     background-color: white;
     color: black;
     border-radius: $border-radius;
@@ -29,6 +29,7 @@
 
   &-title {
     padding-bottom: 1rem;
+    height: 5.375rem;
   }
 
   &-text {

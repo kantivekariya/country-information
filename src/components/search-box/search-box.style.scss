@@ -1,0 +1,46 @@
+@import "../../common-style";
+
+.search-container {
+  position: relative;
+  display: inline-block;
+  @include box-shadow;
+
+  .search-icon-btn {
+    position: absolute;
+    top: 34%;
+    left: 10%;
+    background-color: transparent;
+    border: none;
+
+    .search-icon {
+      font-size: 1rem;
+    }
+  }
+  .search {
+    width: 27rem;
+    border: none;
+    border-radius: $border-radius;
+    padding: 1.2rem 0;
+    padding-left: 5rem;
+    font-size: 0.8rem;
+  }
+  .light-mode,
+  .light-mode::placeholder {
+    color: $light-mode-input;
+    transition: all 0.3s;
+  }
+
+  .dark-mode,
+  .dark-mode::placeholder {
+    background-color: $dark-mode-elements;
+    color: $light-mode-elements;
+    transition: all 0.3s;
+  }
+}
+
+@media screen and (max-width: $width-mobile) {
+  .search {
+    width: $width !important;
+    font-size: 1rem !important;
+  }
+}

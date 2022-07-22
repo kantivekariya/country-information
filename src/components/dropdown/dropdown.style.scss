@@ -1,0 +1,97 @@
+@import "../../common-style";
+
+.dropdown {
+  &-container {
+    position: relative;
+  }
+  &-btn {
+    width: 13rem;
+    padding: 1.2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    @include box-shadow;
+  }
+  &-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 0.3rem;
+    width: 13rem;
+    border-radius: $border-radius;
+    transform-origin: top;
+    @include box-shadow;
+  }
+
+  &-item {
+    text-align: left;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+
+    &:first-child {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+}
+
+.show {
+  animation: open 0.3s ease-in forwards;
+}
+.hide {
+  animation: collapse 0.3s ease-in forwards;
+}
+.initial {
+  opacity: 0;
+  transform: scale(0);
+}
+
+@keyframes collapse {
+  0.0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+  98.1% {
+    transform: scale(1, 0.1);
+  }
+}
+
+@keyframes open {
+  0.0% {
+    transform: scale(0);
+  }
+  1.2% {
+    transform: scale(1, 0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: $width-mobile) {
+  .dropdown {
+    &-container {
+      margin-top: 2rem;
+    }
+
+    &-btn,
+    &-menu {
+      width: 15rem;
+    }
+  }
+}

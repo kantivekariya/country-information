@@ -20,7 +20,7 @@ const MainRoutes = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Layout toggleTheme={toggleTheme} />}>
+      <Route path="/" element={<Layout theme={currentTheme} toggleTheme={toggleTheme} />}>
         <Route path="/">
           <Route path="/" element={<CountryInfo theme={currentTheme} />} />
           <Route
