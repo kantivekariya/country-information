@@ -31,7 +31,7 @@ export const fetchCountryInfoDetails =
       const res = await axios.get<AxiosResponse<any, any>, any>(
         `${config.BASE_URL}/alpha/${countryCode}`
       );
-      dispatch(countyInfoDetailsSuccess(res.data));
+      dispatch(countyInfoDetailsSuccess(res.data?.[0]));
     } catch (error) {
       dispatch(countyInfoDetailsFailure(error as string));
       return Promise.reject(error);

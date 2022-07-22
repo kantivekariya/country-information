@@ -1,11 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 
-const Layout = () => {
+export interface LayOutIProps {
+  toggleTheme: () => void;
+}
+const Layout = ({ toggleTheme }: LayOutIProps) => {
   return (
     <div className="">
-      <Header />
-      <main className="container container-sm container-xxl">
+      <Header toggleTheme={toggleTheme} />
+      <main className="container">
         <Outlet />
       </main>
     </div>
