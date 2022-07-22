@@ -26,7 +26,14 @@ Users should be able to:
 
 ### Screenshot
 
+## Light Mode
 ![country](https://user-images.githubusercontent.com/29365336/180505821-0e16c929-2236-4099-a709-98ed0ec44d09.png)
+
+## Dark Mode
+![dark-mode](https://user-images.githubusercontent.com/29365336/180506398-07f1171f-f632-4b2b-827c-41a5db1e878c.png)
+
+## Detail Page
+![2022-07-23_00-36detail](https://user-images.githubusercontent.com/29365336/180506907-42bfc106-d97c-43b8-9edb-5a4871de2686.png)
 
 
 ### Links
