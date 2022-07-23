@@ -48,6 +48,7 @@ Users should be able to:
 - CSS variables
 - CSS Grid
 - [React](https://reactjs.org/) - JS library
+- [Redux Toolkit](https://redux-toolkit.js.org/)
 
 ## Author
 
