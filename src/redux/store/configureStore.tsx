@@ -1,4 +1,4 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
 import {
   persistReducer,
@@ -11,13 +11,7 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-import countryInfoSlice from "../features/countryInfoSlice";
-import countryInfoDetailsSlice from "../features/countryInfoDetailsSlice";
-
-const rootReducer = combineReducers({
-  countryInfo: countryInfoSlice,
-  countryInfoDetails: countryInfoDetailsSlice,
-});
+import rootReducer from "../reducer";
 
 const persistConfig = {
   key: "root",
@@ -26,7 +20,6 @@ const persistConfig = {
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
-
 
 export default configureStore({
   reducer: persistedReducer,
