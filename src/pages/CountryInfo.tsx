@@ -18,10 +18,21 @@ const CountryInfo = ({ theme }: IProps) => {
   const [regions, setRegions] = useState([]);
   const [region, setRegion] = useState("all");
   const [searchField, setSearchField] = useState("");
+  const [showTapToTop, setShowTapToTop] = useState(false);
 
   const { countryList, isLoading } = useSelector(
     (state: any) => state.countryInfo
   );
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        setShowTapToTop(true);
+      } else {
+        setShowTapToTop(false);
+      }
+    });
+  }, []);
 
   useEffect(() => {
     dispatch(fetchCountryInfoList());
@@ -41,8 +52,10 @@ const CountryInfo = ({ theme }: IProps) => {
     );
   }, [countryList]);
 
+  /* to handle region sorting */
   const handleRegion = (event: any) => setRegion(event.target.value);
 
+  /* handle search country by name */
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) =>
     setSearchField(e.target.value);
 
@@ -61,30 +74,42 @@ const CountryInfo = ({ theme }: IProps) => {
         ?.includes(searchField?.toLowerCase())
   );
 
+  const scrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
-      <>
-        {isLoading ? (
-          <Loading theme={theme} />
-        ) : (
-          <div className="container">
-            <div className="controllers">
-              <SearchBox
-                placeholder={`Search for a country...`}
-                handleChange={handleSearch}
-                theme={theme}
-              />
-              <DropdownComponent
-                regions={regions}
-                title={region !== "all" ? region : "Filter by region"}
-                handleChange={handleRegion}
-                theme={theme}
-              />
-            </div>
-            <CardList countries={filterCountries} theme={theme} />
+      {isLoading ? (
+        <Loading theme={theme} />
+      ) : (
+        <div className="container">
+          <div className="controllers">
+            <SearchBox
+              placeholder={`Search for a country...`}
+              handleChange={handleSearch}
+              theme={theme}
+            />
+            <DropdownComponent
+              regions={regions}
+              title={region !== "all" ? region : "Filter by region"}
+              handleChange={handleRegion}
+              theme={theme}
+            />
           </div>
-        )}
-      </>
+          <CardList countries={filterCountries} theme={theme} />
+        </div>
+      )}
+      {showTapToTop && (
+        <div className="tap-to-top">
+          <button color="#fff" className="p-2 " onClick={scrollUp}>
+            <i className="fa fa-arrow-up" aria-hidden="true"></i>
+          </button>
+        </div>
+      )}
       <Outlet />
     </>
   );
