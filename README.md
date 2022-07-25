@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Click Here](https://github.com/kantivekariya/country-information)
-- Live Site URL: [Click Here](https://62daeef1357ae30008fc1b1f--sensational-cucurucho-8870c0.netlify.app/)
+- Live Site URL: [Click Here](https://62de660619914400088fcf1b--sensational-cucurucho-8870c0.netlify.app/)
 
 ## My process
 
