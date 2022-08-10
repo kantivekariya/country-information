@@ -2,10 +2,10 @@ import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet } from "react-router-dom";
 import CardList from "../components/card-list/CardList";
-import DropdownComponent from "../components/dropdown/dropdown";
+import DropdownComponent from "../components/dropdown/Dropdown";
 import Loading from "../components/Loading/Loading";
-import SearchBox from "../components/search-box/search-box";
-import { fetchCountryInfoList } from "../redux/action/countryInfoAction";
+import SearchBox from "../components/search-box/SearchBox";
+import { fetchCountryInfoList } from "../redux/action/CountryInfoAction";
 
 import "./_country-info.scss";
 

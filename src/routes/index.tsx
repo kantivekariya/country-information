@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import CountryDetailsInfo from "../pages/CountryDetailsInfo ";
+import CountryDetailsInfo from "../pages/CountryDetailsInfo";
 import CountryInfo from "../pages/CountryInfo";
 import Layout from "../layouts/Layout";
 import useDarkMode from "../hooks/useDarkMode";

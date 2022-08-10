@@ -1,6 +1,6 @@
 import React from "react";
 
-import Card from "../card/card.component";
+import Card from "../card/Card";
 
 import "./_card-list.scss";
 

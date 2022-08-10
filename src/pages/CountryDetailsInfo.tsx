@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import Loading from "../components/Loading/Loading";
-import { fetchCountryInfoDetails } from "../redux/action/countryInfoAction";
+import { fetchCountryInfoDetails } from "../redux/action/CountryInfoAction";
 
 import "./_country-info-details.scss";
 

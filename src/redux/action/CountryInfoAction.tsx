@@ -4,12 +4,12 @@ import {
   countyInfoDetailsFailure,
   countyInfoDetailsLoading,
   countyInfoDetailsSuccess,
-} from "../features/countryInfoDetailsSlice";
+} from "../features/CountryInfoDetailsSlice";
 import {
   countyInfoFailure,
   countyInfoLoading,
   countyInfoSuccess,
-} from "../features/countryInfoSlice";
+} from "../features/CountryInfoSlice";
 
 export const fetchCountryInfoList = () => async (dispatch: any) => {
   dispatch(countyInfoLoading());
