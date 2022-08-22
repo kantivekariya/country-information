@@ -1,9 +1,10 @@
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+
 import CountryDetailsInfo from "../pages/CountryDetailsInfo";
 import CountryInfo from "../pages/CountryInfo";
 import Layout from "../layouts/Layout";
 import useDarkMode from "../hooks/useDarkMode";
-import { useEffect } from "react";
 
 const MainRoutes = () => {
   const { theme: currentTheme, toggleTheme } = useDarkMode();

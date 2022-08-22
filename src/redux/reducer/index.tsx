@@ -1,4 +1,4 @@
-import { combineReducers } from "redux";
+import { combineReducers } from "@reduxjs/toolkit";
 import countryInfoDetailsSlice from "../features/CountryInfoDetailsSlice";
 import countryInfoSlice from "../features/CountryInfoSlice";
 
