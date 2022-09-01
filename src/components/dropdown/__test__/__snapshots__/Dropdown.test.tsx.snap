@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drop down should be matches snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="dropdown-container"
+      data-testid="dropDownTestId"
+    >
+      <button
+        class="dropdown-btn light"
+        data-testid="manageClickEventId"
+      >
+        <span />
+        <i
+          class="fas fa-chevron-down"
+        />
+      </button>
+      <div
+        class="dropdown-menu
+				initial
+				hide
+        
+			"
+      >
+        <button
+          class="dropdown-item light"
+          data-testid="selectItemId"
+          value="Europe"
+        >
+          Europe
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+`;

@@ -1,4 +1,5 @@
 import "./search-box.style.scss";
+import { SEARCH_BOX_TEST_CONSTANT } from "./SearchBoxConst";
 
 interface IProps {
   placeholder: string;
@@ -6,7 +7,10 @@ interface IProps {
   theme: string;
 }
 const SearchBox = ({ placeholder, handleChange, theme }: IProps) => (
-  <div className="search-container">
+  <div
+    className="search-container"
+    data-testid={SEARCH_BOX_TEST_CONSTANT.searchBoxId}
+  >
     <button className="search-icon-btn">
       <i className={`fas fa-search search-icon ${theme}-mode`}></i>
     </button>

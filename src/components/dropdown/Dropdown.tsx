@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import "./dropdown.style.scss";
+import { DROPDOWN_TEST_CONSTANT } from "./DropDownConst";
 
 interface IProps {
   theme: string;
@@ -44,6 +45,7 @@ const Dropdown = ({ theme, title, regions, handleChange }: IProps) => {
       <button
         className={`dropdown-item ${theme}`}
         value={`${title}`}
+        data-testid={DROPDOWN_TEST_CONSTANT.selectItemId}
         onClick={(event) => {
           handleChange(event);
           setShowMenu(false);
@@ -55,8 +57,8 @@ const Dropdown = ({ theme, title, regions, handleChange }: IProps) => {
   };
 
   return (
-    <div className="dropdown-container" ref={wrapperRef}>
-      <button onClick={toggle} className={`dropdown-btn ${theme}`}>
+    <div className="dropdown-container" ref={wrapperRef} data-testid={DROPDOWN_TEST_CONSTANT.dropDownTestId}>
+      <button data-testid={DROPDOWN_TEST_CONSTANT.manageClickEventId} onClick={toggle} className={`dropdown-btn ${theme}`}>
         <span>{title}</span>
         <i className="fas fa-chevron-down"></i>
       </button>

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search box should be matches snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="search-container"
+      data-testid="searchBoxId"
+    >
+      <button
+        class="search-icon-btn"
+      >
+        <i
+          class="fas fa-search search-icon light-mode"
+        />
+      </button>
+      <input
+        class="search light-mode"
+        placeholder="Search Country"
+        type="search"
+      />
+    </div>
+  </div>
+</body>
+`;

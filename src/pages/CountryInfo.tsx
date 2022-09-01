@@ -6,6 +6,7 @@ import DropdownComponent from "../components/dropdown/Dropdown";
 import Loading from "../components/Loading/Loading";
 import SearchBox from "../components/search-box/SearchBox";
 import { fetchCountryInfoList } from "../redux/action/CountryInfoAction";
+import { COUNTRY_TEST_CONST } from "./CountryConst";
 
 import "./_country-info.scss";
 
@@ -86,7 +87,10 @@ const CountryInfo = ({ theme }: IProps) => {
       {isLoading ? (
         <Loading theme={theme} />
       ) : (
-        <div className="container">
+        <div
+          className="container"
+          data-testid={COUNTRY_TEST_CONST.countryTestId}
+        >
           <div className="controllers">
             <SearchBox
               placeholder={`Search for a country...`}

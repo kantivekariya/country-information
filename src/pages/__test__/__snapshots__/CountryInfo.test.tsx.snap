@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Country Info should be matches snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="container"
+      data-testid="countryTestId"
+    >
+      <div
+        class="controllers"
+      >
+        <div
+          class="search-container"
+          data-testid="searchBoxId"
+        >
+          <button
+            class="search-icon-btn"
+          >
+            <i
+              class="fas fa-search search-icon light-mode"
+            />
+          </button>
+          <input
+            class="search light-mode"
+            placeholder="Search for a country..."
+            type="search"
+          />
+        </div>
+        <div
+          class="dropdown-container"
+          data-testid="dropDownTestId"
+        >
+          <button
+            class="dropdown-btn light"
+            data-testid="manageClickEventId"
+          >
+            <span>
+              Filter by region
+            </span>
+            <i
+              class="fas fa-chevron-down"
+            />
+          </button>
+          <div
+            class="dropdown-menu
+				initial
+				hide
+        
+			"
+          />
+        </div>
+      </div>
+      <div
+        class="cardList-container"
+        data-testid="cardListTestId"
+      />
+    </div>
+  </div>
+</body>
+`;
