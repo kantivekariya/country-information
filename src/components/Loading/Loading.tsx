@@ -5,7 +5,7 @@ interface IProps {
 }
 
 const Loading = ({ theme }: IProps) => (
-  <div className="">
+  <div className="" data-testid="loadingTestId">
     <div className={`spinner ${theme}-loader`}></div>
   </div>
 );

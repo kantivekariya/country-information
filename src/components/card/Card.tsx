@@ -1,11 +1,29 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import { CARD_TEST_CONSTANT } from "./CardConst";
 
 import "./_card.scss";
 
-const Card = ({ country, theme }: any) => {
+interface ICardProps {
+  country: {
+    cca2: string;
+    flags: { svg: string };
+    name: {
+      official: string;
+    };
+    population: number;
+    region: string;
+    capital: string;
+  };
+  theme: string;
+}
+
+const Card = ({ country, theme }: ICardProps) => {
   return (
-    <Link to={`/${country.cca2}`} className="link">
+    <Link
+      to={`/${country.cca2}`}
+      className="link"
+      data-testid={CARD_TEST_CONSTANT.cardTestId}
+    >
       <div className={`card-container ${theme}`}>
         <img className="card-flag" alt="flag" src={country.flags?.svg} />
         <div className="card-description">

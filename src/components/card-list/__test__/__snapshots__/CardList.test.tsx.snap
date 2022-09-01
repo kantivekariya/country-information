@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card List should be matches snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="cardList-container"
+      data-testid="cardListTestId"
+    >
+      <a
+        class="link"
+        data-testid="cardTestId"
+        href="/FI"
+      >
+        <div
+          class="card-container light"
+        >
+          <img
+            alt="flag"
+            class="card-flag"
+            src="https://flagcdn.com/fi.svg"
+          />
+          <div
+            class="card-description"
+          >
+            <h3
+              class="card-title"
+            >
+              Republic of Finland
+            </h3>
+            <div
+              class="card-text"
+            >
+              <span>
+                Population: 
+              </span>
+              5,530,719
+            </div>
+            <div
+              class="card-text"
+            >
+              <span>
+                Region: 
+              </span>
+              Europe
+            </div>
+            <div
+              class="card-text"
+            >
+              <span>
+                Capital: 
+              </span>
+              Helsinki
+            </div>
+          </div>
+        </div>
+      </a>
+      <a
+        class="link"
+        data-testid="cardTestId"
+        href="/GT"
+      >
+        <div
+          class="card-container light"
+        >
+          <img
+            alt="flag"
+            class="card-flag"
+            src="https://flagcdn.com/gt.svg"
+          />
+          <div
+            class="card-description"
+          >
+            <h3
+              class="card-title"
+            >
+              Republic of Guatemala
+            </h3>
+            <div
+              class="card-text"
+            >
+              <span>
+                Population: 
+              </span>
+              16,858,333
+            </div>
+            <div
+              class="card-text"
+            >
+              <span>
+                Region: 
+              </span>
+              Americas
+            </div>
+            <div
+              class="card-text"
+            >
+              <span>
+                Capital: 
+              </span>
+              Guatemala City
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</body>
+`;

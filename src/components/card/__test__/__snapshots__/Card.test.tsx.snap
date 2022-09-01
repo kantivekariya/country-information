@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should be matches snapshot 1`] = `
+<body>
+  <div>
+    <a
+      class="link"
+      data-testid="cardTestId"
+      href="/FI"
+    >
+      <div
+        class="card-container light"
+      >
+        <img
+          alt="flag"
+          class="card-flag"
+          src="https://flagcdn.com/fi.svg"
+        />
+        <div
+          class="card-description"
+        >
+          <h3
+            class="card-title"
+          >
+            Republic of Finland
+          </h3>
+          <div
+            class="card-text"
+          >
+            <span>
+              Population: 
+            </span>
+            5,530,719
+          </div>
+          <div
+            class="card-text"
+          >
+            <span>
+              Region: 
+            </span>
+            Europe
+          </div>
+          <div
+            class="card-text"
+          >
+            <span>
+              Capital: 
+            </span>
+            Helsinki
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</body>
+`;

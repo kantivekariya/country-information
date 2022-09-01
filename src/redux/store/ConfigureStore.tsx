@@ -9,6 +9,7 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
+import persistStore from "redux-persist/es/persistStore";
 import storage from "redux-persist/lib/storage";
 
 import rootReducer from "../reducer";
@@ -21,7 +22,7 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export default configureStore({
+export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -32,3 +33,5 @@ export default configureStore({
   devTools: process.env.NODE_ENV !== "production",
   enhancers: [],
 });
+
+export const persistStoreData = persistStore(store);

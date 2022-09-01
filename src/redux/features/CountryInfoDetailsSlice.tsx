@@ -28,7 +28,7 @@ const countryInfoDetailsSlice = createSlice({
     },
     countyInfoDetailsFailure(state, action: PayloadAction<string>) {
       state.isLoading = false;
-      state.status = "Failde";
+      state.status = "Failed";
       state.error = action.payload;
     },
   },

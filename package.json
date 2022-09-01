@@ -25,7 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "CI= react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest --watchAll --coverage --updateSnapshot",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -47,9 +47,14 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.18.10",
     "@types/redux-batched-subscribe": "^0.1.4",
     "@types/redux-logger": "^3.0.9",
     "@types/redux-persist": "^4.3.1",
-    "sass": "^1.53.0"
+    "babel-jest": "^29.0.1",
+    "jest": "^28.0.0",
+    "jest-environment-jsdom": "^29.0.1",
+    "sass": "^1.53.0",
+    "ts-jest": "^28.0.8"
   }
 }
